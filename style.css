@@ -219,7 +219,7 @@ footer {
   h2 { font-size: 2.6rem; }
   .hero .btn, .contact .btn { width: auto; }
   .hero-img { max-width: 520px; margin-left: auto; margin-right: auto; }
-  .galerie { grid-template-columns: repeat(2, 1fr); }
+  .galerie.seule figure { max-width: 560px; }
   .galerie.triptyque { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .galerie.triptyque figure img { padding: 12px; }
   .galerie.triptyque figcaption { margin-top: 1.1rem; }
@@ -265,6 +265,10 @@ footer {
 
   .serie { display: grid; grid-template-columns: 1fr 3fr; gap: 4rem; margin-bottom: 6rem; }
   .galerie figure img { transition: transform .4s; }
+  /* Tableau seul : image à gauche de la colonne, légende à côté, en bas */
+  .galerie.seule figure { max-width: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: end; }
+  .galerie.seule figure img { grid-column: span 2; }
+  .galerie.seule figcaption { margin: 0 0 12px; }
   .galerie figure:hover img { transform: translateY(-4px); }
 
   .lb-nav { top: 50%; bottom: auto; transform: translateY(-50%); font-size: 3rem; }
