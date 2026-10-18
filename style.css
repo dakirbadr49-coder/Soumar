@@ -79,7 +79,30 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- Accueil ---------- */
 .hero { padding: 1.5rem var(--gutter) 3.5rem; text-align: center; }
-.hero-logo { width: 220px; margin: 0 auto .5rem; }
+.hero-logo {
+  width: 220px; margin: 0 auto .5rem;
+  animation: logo-entree 1.4s cubic-bezier(.2, .8, .2, 1) both, logo-flotte 6s ease-in-out 1.6s infinite;
+}
+.hero-text > :not(.hero-logo) { animation: monte .9s ease both; }
+.hero-text .eyebrow { animation-delay: .6s; }
+.hero-text h1 { animation-delay: .75s; }
+.hero-text .btn { animation-delay: .9s; }
+.logo img { transition: transform .6s cubic-bezier(.2, .8, .2, 1); }
+.logo:hover img { transform: rotate(-12deg) scale(1.08); }
+
+@keyframes logo-entree {
+  from { opacity: 0; transform: scale(.55) rotate(-30deg); }
+  60%  { opacity: 1; }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes logo-flotte {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50%      { transform: translateY(-8px) rotate(1.5deg); }
+}
+@keyframes monte { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo, .hero-text > * { animation: none !important; }
+}
 .hero h1 { font-size: 2.6rem; line-height: 1.1; margin-bottom: .5rem; }
 .hero h1 em { color: var(--accent); }
 .hero .btn { width: 100%; }
@@ -96,7 +119,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .serie:last-child { margin-bottom: 0; }
 .serie-titre { margin-bottom: 1.5rem; }
 .serie-titre p:not(.eyebrow) { color: var(--muted); }
-.astuce { font-size: .8rem; margin-top: .6rem; color: var(--gold) !important; }
 
 .galerie { display: grid; gap: 2rem; }
 .galerie figure img { cursor: zoom-in; }
@@ -114,6 +136,19 @@ figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; 
 .galerie.defile::-webkit-scrollbar { display: none; }
 .galerie.defile figure { scroll-snap-align: center; }
 
+/* Flèches et points sous la série (téléphone) */
+.defile-ctrl { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: -.6rem; }
+.d-btn {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1px solid rgba(28, 25, 23, .35); font-size: 1.6rem; line-height: 1;
+  display: grid; place-items: center; padding-bottom: 3px; transition: .2s;
+}
+.d-btn:active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.d-btn:disabled { opacity: .3; }
+.points { display: flex; gap: .6rem; }
+.points button { width: 8px; height: 8px; padding: 0; border-radius: 50%; background: rgba(28, 25, 23, .25); transition: .25s; }
+.points button.actif { background: var(--accent); width: 22px; border-radius: 4px; }
+
 /* ---------- Expositions ---------- */
 .expos { display: grid; gap: 1.5rem; }
 .expo {
@@ -129,6 +164,14 @@ figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; 
 /* ---------- Contact ---------- */
 .contact { text-align: center; background: var(--surface); }
 .contact .btn { width: 100%; }
+.reseaux-titre { margin-top: 2.5rem; font-family: "Cormorant Garamond", serif; font-size: 1.3rem; }
+.reseaux { list-style: none; padding: 0; margin-top: 1rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+.reseaux a {
+  display: flex; align-items: center; justify-content: center; gap: .6rem; min-height: 52px;
+  border: 1px solid rgba(28, 25, 23, .3); font-size: .85rem; letter-spacing: .05em; transition: .2s;
+}
+.reseaux a:active { color: var(--accent); border-color: var(--accent); }
+.reseaux svg { width: 20px; height: 20px; flex-shrink: 0; }
 
 .credits { margin-top: .4rem; font-size: .65rem; opacity: .8; }
 footer {
@@ -165,7 +208,9 @@ footer {
   .hero-img { max-width: 520px; margin-left: auto; margin-right: auto; }
   .galerie { grid-template-columns: repeat(2, 1fr); }
   .galerie.defile { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 0; }
-  .astuce { display: none; }
+  .defile-ctrl { display: none; }
+  .reseaux { grid-template-columns: repeat(4, auto); justify-content: center; }
+  .reseaux a { padding: 0 1.4rem; }
   .expos { grid-template-columns: repeat(2, 1fr); }
   .cadre, .galerie figure img { padding: 12px; }
 }
@@ -183,6 +228,7 @@ footer {
   .nav nav a { padding: 0; border: 0; font-family: Inter, sans-serif; font-size: .85rem; letter-spacing: .08em; }
   .nav nav a:hover { color: var(--accent); }
   .btn:hover { background: #5e1717; }
+  .reseaux a:hover { color: var(--accent); border-color: var(--accent); }
 
   .hero {
     display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 5rem;
