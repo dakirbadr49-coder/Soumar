@@ -34,7 +34,7 @@
         <h1>Des histoires peintes <em>en séries</em></h1>
         <a href="#oeuvres" class="btn">Découvrir les œuvres</a>
       </div>
-      <img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" class="hero-img cadre">
+      <img src="images/pluie.jpg" alt="Femme sous la pluie face à la mer" class="hero-img cadre">
     </section>
 
     <section id="apropos" class="section apropos">
@@ -53,30 +53,25 @@
 
       <div class="serie">
         <div class="serie-titre">
-          <p class="eyebrow">Série · 3 toiles</p>
-          <h3>Le pêcheur et les bateaux de papier</h3>
-          <p>Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire.</p>
-        </div>
-        <div class="galerie defile">
-          <figure><img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" loading="lazy"><figcaption><strong>I. Le départ</strong><span>Huile sur toile · 2025</span></figcaption></figure>
-          <figure><img src="images/serie-2.jpg" alt="Le pêcheur, les bateaux et les poissons" loading="lazy"><figcaption><strong>II. La pêche</strong><span>Huile sur toile · 2025</span></figcaption></figure>
-          <figure><img src="images/serie-3.jpg" alt="Bateaux de papier sous la lune" loading="lazy"><figcaption><strong>III. La nuit des bateaux</strong><span>Huile sur toile · 2025</span></figcaption></figure>
-        </div>
-        <div class="defile-ctrl">
-          <button class="d-btn d-prec" aria-label="Tableau précédent">‹</button>
-          <div class="points"></div>
-          <button class="d-btn d-suiv" aria-label="Tableau suivant">›</button>
-        </div>
-      </div>
-
-      <div class="serie">
-        <div class="serie-titre">
           <p class="eyebrow">Œuvre</p>
           <h3>Sous la pluie</h3>
           <p>Une femme assise face à la mer, offerte à la pluie.</p>
         </div>
         <div class="galerie">
           <figure><img src="images/pluie.jpg" alt="Femme sous la pluie face à la mer" loading="lazy" class="carre"><figcaption><strong>Sous la pluie</strong><span>Acrylique sur toile · 2025</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="serie">
+        <div class="serie-titre">
+          <p class="eyebrow">Série · 3 toiles</p>
+          <h3>Le pêcheur et les bateaux de papier</h3>
+          <p>Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire.</p>
+        </div>
+        <div class="galerie triptyque">
+          <figure><img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" loading="lazy"><figcaption><strong>I. Le départ</strong><span>Huile sur toile · 2025</span></figcaption></figure>
+          <figure><img src="images/serie-2.jpg" alt="Le pêcheur, les bateaux et les poissons" loading="lazy"><figcaption><strong>II. La pêche</strong><span>Huile sur toile · 2025</span></figcaption></figure>
+          <figure><img src="images/serie-3.jpg" alt="Bateaux de papier sous la lune" loading="lazy"><figcaption><strong>III. La nuit des bateaux</strong><span>Huile sur toile · 2025</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -160,36 +155,6 @@
       nav.classList.remove('ouvert');
       btn.setAttribute('aria-expanded', false);
     }));
-
-    // Série sur téléphone : flèches + points
-    const defile = document.querySelector('.galerie.defile');
-    const pointsBox = document.querySelector('.defile-ctrl .points');
-    const cartes = [...defile.children];
-    cartes.forEach((_, i) => {
-      const p = document.createElement('button');
-      p.setAttribute('aria-label', 'Tableau ' + (i + 1));
-      p.addEventListener('click', () => allerA(i));
-      pointsBox.appendChild(p);
-    });
-    const points = [...pointsBox.children];
-    function indexActuel() {
-      const pas = cartes[1].offsetLeft - cartes[0].offsetLeft;
-      return Math.round(defile.scrollLeft / pas);
-    }
-    function allerA(i) {
-      i = Math.max(0, Math.min(cartes.length - 1, i));
-      defile.scrollTo({ left: cartes[i].offsetLeft - cartes[0].offsetLeft, behavior: 'smooth' });
-    }
-    function majPoints() {
-      const i = indexActuel();
-      points.forEach((p, k) => p.classList.toggle('actif', k === i));
-      document.querySelector('.d-prec').disabled = i === 0;
-      document.querySelector('.d-suiv').disabled = i === cartes.length - 1;
-    }
-    document.querySelector('.d-prec').addEventListener('click', () => allerA(indexActuel() - 1));
-    document.querySelector('.d-suiv').addEventListener('click', () => allerA(indexActuel() + 1));
-    defile.addEventListener('scroll', () => requestAnimationFrame(majPoints), { passive: true });
-    majPoints();
 
     // Agrandissement des tableaux, avec flèches et glissement du doigt
     const box = document.getElementById('lightbox');

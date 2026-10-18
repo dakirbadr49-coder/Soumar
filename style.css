@@ -126,28 +126,12 @@ figcaption { margin-top: 1.1rem; display: flex; flex-direction: column; }
 figcaption strong { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; font-weight: 600; }
 figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; }
 
-/* La série défile au doigt sur téléphone */
-.galerie.defile {
-  grid-auto-flow: column; grid-auto-columns: 82%; gap: 1rem;
-  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
-  margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 2.2rem;
-  scrollbar-width: none;
-}
-.galerie.defile::-webkit-scrollbar { display: none; }
-.galerie.defile figure { scroll-snap-align: center; }
-
-/* Flèches et points sous la série (téléphone) */
-.defile-ctrl { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: -.6rem; }
-.d-btn {
-  width: 48px; height: 48px; border-radius: 50%;
-  border: 1px solid rgba(28, 25, 23, .35); font-size: 1.6rem; line-height: 1;
-  display: grid; place-items: center; padding-bottom: 3px; transition: .2s;
-}
-.d-btn:active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-.d-btn:disabled { opacity: .3; }
-.points { display: flex; gap: .6rem; }
-.points button { width: 8px; height: 8px; padding: 0; border-radius: 50%; background: rgba(28, 25, 23, .25); transition: .25s; }
-.points button.actif { background: var(--accent); width: 22px; border-radius: 4px; }
+/* La série : les 3 toiles côte à côte, comme un triptyque */
+.galerie.triptyque { grid-template-columns: repeat(3, 1fr); gap: .5rem; align-items: start; }
+.galerie.triptyque figure img { padding: 4px; }
+.galerie.triptyque figcaption { margin-top: .5rem; }
+.galerie.triptyque figcaption strong { font-size: .95rem; line-height: 1.2; }
+.galerie.triptyque figcaption span { font-size: .65rem; line-height: 1.3; }
 
 /* ---------- Expositions ---------- */
 .expos { display: grid; gap: 1.5rem; }
@@ -207,8 +191,11 @@ footer {
   .hero .btn, .contact .btn { width: auto; }
   .hero-img { max-width: 520px; margin-left: auto; margin-right: auto; }
   .galerie { grid-template-columns: repeat(2, 1fr); }
-  .galerie.defile { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 0; }
-  .defile-ctrl { display: none; }
+  .galerie.triptyque { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .galerie.triptyque figure img { padding: 12px; }
+  .galerie.triptyque figcaption { margin-top: 1.1rem; }
+  .galerie.triptyque figcaption strong { font-size: 1.35rem; }
+  .galerie.triptyque figcaption span { font-size: .8rem; }
   .reseaux { grid-template-columns: repeat(4, auto); justify-content: center; }
   .reseaux a { padding: 0 1.4rem; }
   .expos { grid-template-columns: repeat(2, 1fr); }
