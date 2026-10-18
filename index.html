@@ -178,20 +178,29 @@
     const box = document.getElementById('lightbox');
     const boxImg = box.querySelector('img');
     const boxTxt = box.querySelector('figcaption');
-    const tableaux = [...document.querySelectorAll('.galerie img, .affiche')];
+    const navBtns = box.querySelectorAll('.lb-nav');
+    // Chaque groupe s'ouvre seul : les 3 toiles de la série ensemble, le tableau seul et l'affiche à part
+    let groupe = [];
     let actuel = 0;
 
     function montrer(i) {
-      actuel = (i + tableaux.length) % tableaux.length;
-      const t = tableaux[actuel];
+      actuel = (i + groupe.length) % groupe.length;
+      const t = groupe[actuel];
       boxImg.src = t.src;
       boxImg.alt = t.alt;
       boxTxt.textContent = t.nextElementSibling && t.nextElementSibling.querySelector('strong') ? t.nextElementSibling.querySelector('strong').textContent : 'Surconsommation — Carte de Visite 2026';
     }
-    function ouvrir(i) { montrer(i); box.classList.add('ouvert'); document.body.style.overflow = 'hidden'; }
+    function ouvrir(img) {
+      const conteneur = img.closest('.galerie');
+      groupe = conteneur ? [...conteneur.querySelectorAll('img')] : [img];
+      navBtns.forEach(b => b.hidden = groupe.length < 2);
+      montrer(groupe.indexOf(img));
+      box.classList.add('ouvert');
+      document.body.style.overflow = 'hidden';
+    }
     function fermer() { box.classList.remove('ouvert'); document.body.style.overflow = ''; }
 
-    tableaux.forEach((img, i) => img.addEventListener('click', () => ouvrir(i)));
+    document.querySelectorAll('.galerie img, .affiche').forEach(img => img.addEventListener('click', () => ouvrir(img)));
     box.querySelector('.lb-fermer').addEventListener('click', fermer);
     box.querySelector('.lb-prec').addEventListener('click', e => { e.stopPropagation(); montrer(actuel - 1); });
     box.querySelector('.lb-suiv').addEventListener('click', e => { e.stopPropagation(); montrer(actuel + 1); });
@@ -199,6 +208,7 @@
     document.addEventListener('keydown', e => {
       if (!box.classList.contains('ouvert')) return;
       if (e.key === 'Escape') fermer();
+      if (groupe.length < 2) return;
       if (e.key === 'ArrowLeft') montrer(actuel - 1);
       if (e.key === 'ArrowRight') montrer(actuel + 1);
     });
@@ -208,7 +218,7 @@
     box.addEventListener('touchend', e => {
       if (departX === null) return;
       const dx = e.changedTouches[0].clientX - departX;
-      if (Math.abs(dx) > 50) montrer(actuel + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 50 && groupe.length > 1) montrer(actuel + (dx < 0 ? 1 : -1));
       departX = null;
     });
   </script>

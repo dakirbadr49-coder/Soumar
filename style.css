@@ -255,6 +255,7 @@ footer {
   position: absolute; bottom: max(12px, env(safe-area-inset-bottom));
   width: 56px; height: 48px; font-size: 2.2rem; color: #e9e1d6;
 }
+.lb-nav[hidden] { display: none; }
 .lb-prec { left: calc(50% - 64px); }
 .lb-suiv { right: calc(50% - 64px); }
 
