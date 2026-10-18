@@ -12,11 +12,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    try { if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+  </script>
 </head>
 <body>
 
   <header class="nav">
     <a href="#" class="logo"><img src="images/logo-petit.png" alt="">Soumar</a>
+    <button class="theme-btn" aria-label="Passer en mode jour">
+      <svg class="soleil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="lune" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
     <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav id="menu">
       <a href="#apropos">À propos</a>
@@ -139,6 +146,22 @@
   </div>
 
   <script>
+    // Mode jour / mode sombre (sombre par défaut)
+    const themeBtn = document.querySelector('.theme-btn');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    function appliquerTheme(jour) {
+      if (jour) document.documentElement.dataset.theme = 'light';
+      else delete document.documentElement.dataset.theme;
+      themeBtn.setAttribute('aria-label', jour ? 'Passer en mode sombre' : 'Passer en mode jour');
+      themeMeta.setAttribute('content', jour ? '#f6f1ea' : '#231913');
+    }
+    appliquerTheme(document.documentElement.dataset.theme === 'light');
+    themeBtn.addEventListener('click', () => {
+      const jour = document.documentElement.dataset.theme !== 'light';
+      appliquerTheme(jour);
+      try { localStorage.setItem('theme', jour ? 'light' : 'dark'); } catch (e) {}
+    });
+
     // Menu mobile
     const btn = document.querySelector('.menu-btn');
     const nav = document.querySelector('.nav');
