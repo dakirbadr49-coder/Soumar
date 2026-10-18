@@ -134,16 +134,28 @@ figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; 
 .galerie.triptyque figcaption span { font-size: .65rem; line-height: 1.3; }
 
 /* ---------- Expositions ---------- */
-.expos { display: grid; gap: 1.5rem; }
-.expo {
-  background: #fff; overflow: hidden;
-  border: 1px solid rgba(28, 25, 23, .2);
+.expo-vedette { display: grid; gap: 2rem; }
+.affiche { padding: 8px; border: 1px solid rgba(28, 25, 23, .35); cursor: zoom-in; }
+.expo-infos time { color: var(--accent); font-weight: 500; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+.expo-infos h3 { color: var(--text); font-size: 2.2rem; margin: .3rem 0 .8rem; }
+.expo-cadre { color: var(--muted); margin-bottom: 1.5rem; }
+.expo-cadre strong { color: var(--text); font-weight: 500; }
+
+.horaires { margin: 0 0 1.5rem; border-top: 1px solid var(--line); }
+.horaires div { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.horaires dt { font-weight: 500; }
+.horaires dd { margin: 0; color: var(--muted); text-align: right; }
+.horaires div:first-child dd { color: var(--accent); font-weight: 500; }
+
+.lieu { line-height: 1.6; }
+.gratuit {
+  display: inline-block; margin-top: .8rem; padding: .25rem .8rem;
+  border: 1px solid var(--gold); color: var(--gold); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
 }
-.expo img { aspect-ratio: 16 / 10; object-fit: cover; }
-.expo-texte { padding: 1.2rem 1.3rem 1.4rem; border-top: 3px solid var(--accent); }
-.expo time { color: var(--accent); font-weight: 500; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
-.expo h3 { color: var(--text); font-size: 1.5rem; margin: .3rem 0 .2rem; }
-.expo p { color: var(--muted); font-size: .9rem; }
+.expo-btns { display: grid; gap: .7rem; margin-top: 1rem; }
+.expo-btns .btn { margin-top: 0; }
+.btn-ligne { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn-ligne:active { background: var(--accent); color: var(--bg); }
 
 /* ---------- Contact ---------- */
 .contact { text-align: center; background: var(--surface); }
@@ -157,7 +169,6 @@ figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; 
 .reseaux a:active { color: var(--accent); border-color: var(--accent); }
 .reseaux svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-.credits { margin-top: .4rem; font-size: .65rem; opacity: .8; }
 footer {
   padding: 2rem var(--gutter); padding-bottom: max(2rem, env(safe-area-inset-bottom));
   text-align: center; font-size: .75rem; color: var(--muted); letter-spacing: .05em;
@@ -198,7 +209,8 @@ footer {
   .galerie.triptyque figcaption span { font-size: .8rem; }
   .reseaux { grid-template-columns: repeat(4, auto); justify-content: center; }
   .reseaux a { padding: 0 1.4rem; }
-  .expos { grid-template-columns: repeat(2, 1fr); }
+  .expo-vedette { grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; }
+  .expo-btns { grid-template-columns: auto auto; justify-content: start; }
   .cadre, .galerie figure img { padding: 12px; }
 }
 
@@ -228,9 +240,8 @@ footer {
   .section { padding: 6rem var(--gutter); }
   .apropos { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
   .apropos-img { width: 100%; max-width: 360px; margin: 0; }
-  .expos { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .expo { transition: transform .3s; }
-  .expo:hover { transform: translateY(-4px); }
+  .expo-vedette { grid-template-columns: minmax(0, 420px) 1fr; gap: 5rem; }
+  .btn-ligne:hover { background: var(--accent); color: var(--bg); }
   .apropos p:not(.eyebrow) { max-width: 60ch; }
 
   .serie { display: grid; grid-template-columns: 1fr 3fr; gap: 4rem; margin-bottom: 6rem; }

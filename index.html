@@ -65,8 +65,8 @@
       <div class="serie">
         <div class="serie-titre">
           <p class="eyebrow">Série · 3 toiles</p>
-          <h3>Le pêcheur et les bateaux de papier</h3>
-          <p>Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire.</p>
+          <h3>Surconsommation</h3>
+          <p>Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire, et qui interrogent notre rapport à la surconsommation.</p>
         </div>
         <div class="galerie triptyque">
           <figure><img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" loading="lazy"><figcaption><strong>I. Le départ</strong><span>Huile sur toile · 2025</span></figcaption></figure>
@@ -79,32 +79,28 @@
     <section id="expositions" class="section">
       <p class="eyebrow">Agenda</p>
       <h2>Expositions à venir</h2>
-      <div class="expos">
-        <article class="expo">
-          <img src="images/expo-1.jpg" alt="Vernissage dans une galerie contemporaine" loading="lazy">
-          <div class="expo-texte">
-            <time>14 — 30 nov. 2026</time>
-            <h3>Le pêcheur et les bateaux de papier</h3>
-            <p>Galerie à confirmer, Paris</p>
+      <article class="expo-vedette">
+        <img src="images/affiche-surconsommation.jpg" alt="Affiche de l'exposition Surconsommation — Carte de Visite ARTopenKUNST, Bruxelles, 13 au 15 novembre 2026" class="affiche">
+        <div class="expo-infos">
+          <time>13 — 15 novembre 2026</time>
+          <h3>Surconsommation</h3>
+          <p class="expo-cadre">Dans le cadre de <strong>Carte de Visite | ARTopenKUNST</strong>, projet initié en 2014 par le Service Culture de la Ville de Bruxelles, qui réunit chaque année entre 250 et 300 artistes.</p>
+
+          <dl class="horaires">
+            <div><dt>Ven. 13 nov.</dt><dd>Vernissage · 18h – 22h</dd></div>
+            <div><dt>Sam. 14 nov.</dt><dd>11h – 19h</dd></div>
+            <div><dt>Dim. 15 nov.</dt><dd>11h – 18h</dd></div>
+          </dl>
+
+          <p class="lieu"><strong>Espace Vanderborght</strong><br>Rue de l'Écuyer 50, 1000 Bruxelles</p>
+          <p class="gratuit">Entrée libre</p>
+
+          <div class="expo-btns">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Espace+Vanderborght+Rue+de+l%27%C3%89cuyer+50+1000+Bruxelles" target="_blank" rel="noopener" class="btn">Itinéraire</a>
+            <a href="https://www.cartedevisite.brussels" target="_blank" rel="noopener" class="btn btn-ligne">Site de l'événement</a>
           </div>
-        </article>
-        <article class="expo">
-          <img src="images/expo-2.jpg" alt="Visiteurs lors d'un vernissage" loading="lazy">
-          <div class="expo-texte">
-            <time>8 — 22 janv. 2027</time>
-            <h3>Exposition collective</h3>
-            <p>Lieu à confirmer</p>
-          </div>
-        </article>
-        <article class="expo">
-          <img src="images/expo-3.jpg" alt="Buffet de vernissage" loading="lazy">
-          <div class="expo-texte">
-            <time>Mars 2027</time>
-            <h3>Atelier portes ouvertes</h3>
-            <p>Atelier de l'artiste</p>
-          </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
 
     <section id="contact" class="section contact">
@@ -133,7 +129,6 @@
 
   <footer>
     <p>© 2026 Soumar — Tous droits réservés</p>
-    <p class="credits">Photos de vernissage provisoires (Wikimedia Commons) : UserESG (CC BY-SA 4.0), Andreas Bohnenstengel (CC BY-SA 3.0 DE), Mack Male (CC BY-SA 2.0)</p>
   </footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Tableau agrandi">
@@ -160,7 +155,7 @@
     const box = document.getElementById('lightbox');
     const boxImg = box.querySelector('img');
     const boxTxt = box.querySelector('figcaption');
-    const tableaux = [...document.querySelectorAll('.galerie img')];
+    const tableaux = [...document.querySelectorAll('.galerie img, .affiche')];
     let actuel = 0;
 
     function montrer(i) {
@@ -168,7 +163,7 @@
       const t = tableaux[actuel];
       boxImg.src = t.src;
       boxImg.alt = t.alt;
-      boxTxt.textContent = t.nextElementSibling.querySelector('strong').textContent;
+      boxTxt.textContent = t.nextElementSibling && t.nextElementSibling.querySelector('strong') ? t.nextElementSibling.querySelector('strong').textContent : 'Surconsommation — Carte de Visite 2026';
     }
     function ouvrir(i) { montrer(i); box.classList.add('ouvert'); document.body.style.overflow = 'hidden'; }
     function fermer() { box.classList.remove('ouvert'); document.body.style.overflow = ''; }
