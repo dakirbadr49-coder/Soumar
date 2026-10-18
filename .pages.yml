@@ -3,7 +3,7 @@
 
 media:
   input: images
-  output: images
+  output: /images
 
 content:
   - name: accueil
@@ -45,7 +45,10 @@ content:
         label: Œuvres et séries
         description: Un groupe avec un seul tableau s'affiche seul. Avec plusieurs tableaux, il s'affiche comme une série.
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.titre}"
         fields:
           - name: titre
             label: Titre de l'œuvre ou de la série
@@ -57,7 +60,10 @@ content:
           - name: tableaux
             label: Tableaux
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.titre}"
             fields:
               - name: image
                 label: Photo du tableau
@@ -84,7 +90,10 @@ content:
         label: Expositions
         description: Une exposition passe automatiquement dans « Expositions passées » après sa date de fin.
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.titre}"
         fields:
           - name: titre
             label: Titre
@@ -106,7 +115,10 @@ content:
           - name: horaires
             label: Horaires
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.jour}"
             fields:
               - name: jour
                 label: Jour
