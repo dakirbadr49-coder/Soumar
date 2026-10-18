@@ -1,9 +1,9 @@
 {
   "sous_titre": "Peintre · Séries & personnages",
-  "titre": "Des histoires peintes",
+  "titre": "Des histoires peintes ",
   "titre_couleur": "en séries",
-  "tableau": "images/pluie.jpg",
+  "tableau": "/images/pluie.jpg",
   "tableau_description": "Femme sous la pluie face à la mer",
-  "apropos_image": "images/serie-3.jpg",
+  "apropos_image": "/images/serie-3.jpg",
   "apropos_texte": "Soumar est une artiste peintre qui travaille par séries : un même personnage, un même univers, raconté de toile en toile. Pêcheurs, cormorans, bateaux de papier… ses tableaux se répondent comme les pages d'un récit.\n\nElle peint à l'huile et à l'acrylique, avec des couleurs franches, des cadres dans le cadre et une attention particulière aux textures. Chaque œuvre est une pièce unique, réalisée à la main dans son atelier."
 }
