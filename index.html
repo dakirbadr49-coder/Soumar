@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Camille Laurent — Peintre</title>
-  <meta name="description" content="Peintures originales et expositions de Camille Laurent.">
+  <title>Soumar — Peintre</title>
+  <meta name="description" content="Peintures originales, séries de personnages et expositions de Soumar.">
+  <link rel="icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
 <body>
 
   <header class="nav">
-    <a href="#" class="logo">Camille Laurent</a>
+    <a href="#" class="logo"><img src="images/logo-petit.jpg" alt="">Soumar</a>
     <nav>
       <a href="#apropos">À propos</a>
       <a href="#oeuvres">Œuvres</a>
@@ -24,41 +25,57 @@
 
   <section class="hero">
     <div class="hero-text">
-      <p class="eyebrow">Peintre · Huile &amp; acrylique</p>
-      <h1>La couleur comme<br><em>langage du silence</em></h1>
+      <img src="images/logo.jpg" alt="Logo Soumar" class="hero-logo">
+      <p class="eyebrow">Peintre · Séries &amp; personnages</p>
+      <h1>Des histoires peintes<br><em>en séries</em></h1>
       <a href="#oeuvres" class="btn">Découvrir les œuvres</a>
     </div>
-    <img src="images/tableau-1.svg" alt="Tableau mis en avant" class="hero-img">
+    <img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" class="hero-img">
   </section>
 
   <section id="apropos" class="section apropos">
-    <img src="images/portrait.svg" alt="Portrait de l'artiste" class="portrait">
+    <img src="images/serie-3.jpg" alt="Bateaux de papier sous la lune" class="apropos-img">
     <div>
       <h2>À propos</h2>
-      <p>Née à Lyon, Camille Laurent peint depuis plus de quinze ans. Son travail explore la lumière, les paysages intérieurs et la mémoire des lieux, à travers de larges aplats de couleur et des textures superposées.</p>
-      <p>Formée aux Beaux-Arts, elle expose régulièrement en France et en Europe. Chaque toile est une pièce unique, réalisée à la main dans son atelier.</p>
+      <p>Soumar est une artiste peintre qui travaille par séries : un même personnage, un même univers, raconté de toile en toile. Pêcheurs, cormorans, bateaux de papier… ses tableaux se répondent comme les pages d'un récit.</p>
+      <p>Elle peint à l'huile et à l'acrylique, avec des couleurs franches, des cadres dans le cadre et une attention particulière aux textures. Chaque œuvre est une pièce unique, réalisée à la main dans son atelier.</p>
     </div>
   </section>
 
   <section id="oeuvres" class="section">
     <h2>Œuvres</h2>
-    <div class="galerie">
-      <figure><img src="images/tableau-1.svg" alt="Aube rouge"><figcaption><strong>Aube rouge</strong><span>Huile sur toile · 80 × 100 cm · 2025</span></figcaption></figure>
-      <figure><img src="images/tableau-2.svg" alt="Marée basse"><figcaption><strong>Marée basse</strong><span>Acrylique · 60 × 60 cm · 2025</span></figcaption></figure>
-      <figure><img src="images/tableau-3.svg" alt="Jardin d'hiver"><figcaption><strong>Jardin d'hiver</strong><span>Huile sur toile · 100 × 120 cm · 2024</span></figcaption></figure>
-      <figure><img src="images/tableau-4.svg" alt="Fenêtre ouverte"><figcaption><strong>Fenêtre ouverte</strong><span>Acrylique · 50 × 70 cm · 2024</span></figcaption></figure>
-      <figure><img src="images/tableau-5.svg" alt="Nocturne"><figcaption><strong>Nocturne</strong><span>Huile sur toile · 90 × 90 cm · 2023</span></figcaption></figure>
-      <figure><img src="images/tableau-6.svg" alt="Champs d'or"><figcaption><strong>Champs d'or</strong><span>Technique mixte · 70 × 100 cm · 2023</span></figcaption></figure>
+
+    <div class="serie">
+      <div class="serie-titre">
+        <p class="eyebrow">Série</p>
+        <h3>Le pêcheur et les bateaux de papier</h3>
+        <p>Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire.</p>
+      </div>
+      <div class="galerie">
+        <figure><img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" loading="lazy"><figcaption><strong>I. Le départ</strong><span>Huile sur toile · 2025</span></figcaption></figure>
+        <figure><img src="images/serie-2.jpg" alt="Le pêcheur, les bateaux et les poissons" loading="lazy"><figcaption><strong>II. La pêche</strong><span>Huile sur toile · 2025</span></figcaption></figure>
+        <figure><img src="images/serie-3.jpg" alt="Bateaux de papier sous la lune" loading="lazy"><figcaption><strong>III. La nuit des bateaux</strong><span>Huile sur toile · 2025</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="serie">
+      <div class="serie-titre">
+        <p class="eyebrow">Œuvre</p>
+        <h3>Sous la pluie</h3>
+        <p>Une femme assise face à la mer, offerte à la pluie.</p>
+      </div>
+      <div class="galerie">
+        <figure><img src="images/pluie.jpg" alt="Femme sous la pluie face à la mer" loading="lazy" class="carre"><figcaption><strong>Sous la pluie</strong><span>Acrylique sur toile · 2025</span></figcaption></figure>
+      </div>
     </div>
   </section>
 
   <section id="expositions" class="section">
     <h2>Expositions à venir</h2>
     <ul class="expos">
-      <li><time>14 — 30 nov. 2026</time><div><strong>Lumières d'automne</strong><span>Galerie Saint-Jean, Lyon</span></div></li>
-      <li><time>8 — 22 janv. 2027</time><div><strong>Paysages intérieurs</strong><span>Espace Art &amp; Co, Paris</span></div></li>
-      <li><time>5 — 19 mars 2027</time><div><strong>Salon des Artistes</strong><span>Palais des Congrès, Marseille</span></div></li>
-      <li><time>Mai 2027</time><div><strong>Atelier portes ouvertes</strong><span>Atelier de l'artiste, Lyon</span></div></li>
+      <li><time>14 — 30 nov. 2026</time><div><strong>Le pêcheur et les bateaux de papier</strong><span>Galerie à confirmer, Paris</span></div></li>
+      <li><time>8 — 22 janv. 2027</time><div><strong>Exposition collective</strong><span>Lieu à confirmer</span></div></li>
+      <li><time>Mars 2027</time><div><strong>Atelier portes ouvertes</strong><span>Atelier de l'artiste</span></div></li>
     </ul>
   </section>
 
@@ -68,7 +85,22 @@
     <a href="mailto:contact@exemple.com" class="btn">contact@exemple.com</a>
   </section>
 
-  <footer>© 2026 Camille Laurent — Tous droits réservés</footer>
+  <footer>© 2026 Soumar — Tous droits réservés</footer>
+
+  <div class="lightbox" id="lightbox"><img alt=""></div>
+
+  <script>
+    const box = document.getElementById('lightbox');
+    document.querySelectorAll('.galerie img').forEach(img => {
+      img.addEventListener('click', () => {
+        box.querySelector('img').src = img.src;
+        box.querySelector('img').alt = img.alt;
+        box.classList.add('ouvert');
+      });
+    });
+    box.addEventListener('click', () => box.classList.remove('ouvert'));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('ouvert'); });
+  </script>
 
 </body>
 </html>
