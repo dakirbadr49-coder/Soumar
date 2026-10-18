@@ -1,0 +1,165 @@
+# Configuration de l'admin Pages CMS (https://app.pagescms.org)
+# Chaque entrée ci-dessous apparaît dans le menu de l'admin.
+
+media:
+  input: images
+  output: images
+
+content:
+  - name: accueil
+    label: Accueil et À propos
+    type: file
+    path: content/accueil.json
+    format: json
+    fields:
+      - name: sous_titre
+        label: Petit texte au-dessus du titre
+        type: string
+      - name: titre
+        label: Titre principal
+        type: string
+      - name: titre_couleur
+        label: Fin du titre (en couleur)
+        type: string
+      - name: tableau
+        label: Grand tableau de l'accueil
+        type: image
+      - name: tableau_description
+        label: Description du grand tableau (pour les malvoyants et Google)
+        type: string
+      - name: apropos_image
+        label: Image de la partie « À propos »
+        type: image
+      - name: apropos_texte
+        label: Texte « À propos »
+        description: Laissez une ligne vide pour commencer un nouveau paragraphe.
+        type: text
+
+  - name: oeuvres
+    label: Œuvres
+    type: file
+    path: content/oeuvres.json
+    format: json
+    fields:
+      - name: groupes
+        label: Œuvres et séries
+        description: Un groupe avec un seul tableau s'affiche seul. Avec plusieurs tableaux, il s'affiche comme une série.
+        type: object
+        list: true
+        fields:
+          - name: titre
+            label: Titre de l'œuvre ou de la série
+            type: string
+            required: true
+          - name: description
+            label: Petite présentation
+            type: text
+          - name: tableaux
+            label: Tableaux
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: Photo du tableau
+                type: image
+                required: true
+              - name: titre
+                label: Titre du tableau
+                type: string
+              - name: details
+                label: Technique, dimensions, année
+                description: "Exemple : Huile sur toile · 60 × 90 cm · 2025"
+                type: string
+              - name: description_image
+                label: Ce que montre le tableau (pour les malvoyants et Google)
+                type: string
+
+  - name: expositions
+    label: Expositions
+    type: file
+    path: content/expositions.json
+    format: json
+    fields:
+      - name: expositions
+        label: Expositions
+        description: Une exposition passe automatiquement dans « Expositions passées » après sa date de fin.
+        type: object
+        list: true
+        fields:
+          - name: titre
+            label: Titre
+            type: string
+            required: true
+          - name: dates
+            label: Dates affichées
+            description: "Exemple : 13 — 15 novembre 2026"
+            type: string
+          - name: date_fin
+            label: Date de fin
+            type: date
+          - name: affiche
+            label: Affiche ou photo
+            type: image
+          - name: presentation
+            label: Présentation
+            type: text
+          - name: horaires
+            label: Horaires
+            type: object
+            list: true
+            fields:
+              - name: jour
+                label: Jour
+                description: "Exemple : Ven. 13 nov."
+                type: string
+              - name: heures
+                label: Heures
+                description: "Exemple : 11h – 19h"
+                type: string
+              - name: vernissage
+                label: C'est le vernissage (mis en couleur)
+                type: boolean
+          - name: lieu
+            label: Nom du lieu
+            type: string
+          - name: adresse
+            label: Adresse
+            type: string
+          - name: entree_libre
+            label: Entrée libre
+            type: boolean
+          - name: lien_site
+            label: Lien du site de l'événement
+            type: string
+
+  - name: contact
+    label: Contact et réseaux
+    type: file
+    path: content/contact.json
+    format: json
+    fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: texte
+        label: Texte
+        type: text
+      - name: email
+        label: Adresse email
+        type: string
+      - name: instagram
+        label: Lien Instagram
+        description: Laisser vide pour cacher le bouton.
+        type: string
+      - name: tiktok
+        label: Lien TikTok
+        description: Laisser vide pour cacher le bouton.
+        type: string
+      - name: facebook
+        label: Lien Facebook
+        description: Laisser vide pour cacher le bouton.
+        type: string
+      - name: youtube
+        label: Lien YouTube
+        description: Laisser vide pour cacher le bouton.
+        type: string

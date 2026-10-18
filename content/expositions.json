@@ -1,0 +1,20 @@
+{
+  "expositions": [
+    {
+      "titre": "Surconsommation",
+      "dates": "13 — 15 novembre 2026",
+      "date_fin": "2026-11-15",
+      "affiche": "images/affiche-surconsommation.jpg",
+      "presentation": "Dans le cadre de Carte de Visite | ARTopenKUNST, projet initié en 2014 par le Service Culture de la Ville de Bruxelles, qui réunit chaque année entre 250 et 300 artistes.",
+      "horaires": [
+        { "jour": "Ven. 13 nov.", "heures": "Vernissage · 18h – 22h", "vernissage": true },
+        { "jour": "Sam. 14 nov.", "heures": "11h – 19h", "vernissage": false },
+        { "jour": "Dim. 15 nov.", "heures": "11h – 18h", "vernissage": false }
+      ],
+      "lieu": "Espace Vanderborght",
+      "adresse": "Rue de l'Écuyer 50, 1000 Bruxelles",
+      "entree_libre": true,
+      "lien_site": "https://www.cartedevisite.brussels"
+    }
+  ]
+}

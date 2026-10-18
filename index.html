@@ -45,92 +45,40 @@
     </section>
 
     <section id="apropos" class="section apropos">
-      <img src="images/serie-3.jpg" alt="Bateaux de papier sous la lune" class="apropos-img cadre" loading="lazy">
+      <img src="images/serie-3.jpg" alt="" class="apropos-img cadre" loading="lazy">
       <div>
         <p class="eyebrow">L'artiste</p>
         <h2>À propos</h2>
-        <p>Soumar est une artiste peintre qui travaille par séries : un même personnage, un même univers, raconté de toile en toile. Pêcheurs, cormorans, bateaux de papier… ses tableaux se répondent comme les pages d'un récit.</p>
-        <p>Elle peint à l'huile et à l'acrylique, avec des couleurs franches, des cadres dans le cadre et une attention particulière aux textures. Chaque œuvre est une pièce unique, réalisée à la main dans son atelier.</p>
+        <div class="apropos-texte"></div>
       </div>
     </section>
 
     <section id="oeuvres" class="section">
       <p class="eyebrow">Galerie</p>
       <h2>Œuvres</h2>
-
-      <div class="serie">
-        <div class="serie-titre">
-          <p class="eyebrow">Œuvre</p>
-          <h3>Sous la pluie</h3>
-          <p>Une femme assise face à la mer, offerte à la pluie.</p>
-        </div>
-        <div class="galerie seule">
-          <figure><img src="images/pluie.jpg" alt="Femme sous la pluie face à la mer" loading="lazy" class="carre"><figcaption><strong>Sous la pluie</strong><span>Acrylique sur toile · 2025</span></figcaption></figure>
-        </div>
-      </div>
-
-      <div class="serie">
-        <div class="serie-titre">
-          <p class="eyebrow">Série · 3 toiles</p>
-          <h3>Surconsommation</h3>
-          <p>Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire, et qui interrogent notre rapport à la surconsommation.</p>
-        </div>
-        <div class="galerie triptyque">
-          <figure><img src="images/serie-1.jpg" alt="Le pêcheur et ses cormorans" loading="lazy"><figcaption><strong>I. Le départ</strong><span>Huile sur toile · 2025</span></figcaption></figure>
-          <figure><img src="images/serie-2.jpg" alt="Le pêcheur, les bateaux et les poissons" loading="lazy"><figcaption><strong>II. La pêche</strong><span>Huile sur toile · 2025</span></figcaption></figure>
-          <figure><img src="images/serie-3.jpg" alt="Bateaux de papier sous la lune" loading="lazy"><figcaption><strong>III. La nuit des bateaux</strong><span>Huile sur toile · 2025</span></figcaption></figure>
-        </div>
-      </div>
+      <div id="groupes"></div>
     </section>
 
     <section id="expositions" class="section">
       <p class="eyebrow">Agenda</p>
       <h2>Expositions à venir</h2>
-      <article class="expo-vedette">
-        <img src="images/affiche-surconsommation.jpg" alt="Affiche de l'exposition Surconsommation — Carte de Visite ARTopenKUNST, Bruxelles, 13 au 15 novembre 2026" class="affiche">
-        <div class="expo-infos">
-          <time>13 — 15 novembre 2026</time>
-          <h3>Surconsommation</h3>
-          <p class="expo-cadre">Dans le cadre de <strong>Carte de Visite | ARTopenKUNST</strong>, projet initié en 2014 par le Service Culture de la Ville de Bruxelles, qui réunit chaque année entre 250 et 300 artistes.</p>
-
-          <dl class="horaires">
-            <div><dt>Ven. 13 nov.</dt><dd>Vernissage · 18h – 22h</dd></div>
-            <div><dt>Sam. 14 nov.</dt><dd>11h – 19h</dd></div>
-            <div><dt>Dim. 15 nov.</dt><dd>11h – 18h</dd></div>
-          </dl>
-
-          <p class="lieu"><strong>Espace Vanderborght</strong><br>Rue de l'Écuyer 50, 1000 Bruxelles</p>
-          <p class="gratuit">Entrée libre</p>
-
-          <div class="expo-btns">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Espace+Vanderborght+Rue+de+l%27%C3%89cuyer+50+1000+Bruxelles" target="_blank" rel="noopener" class="btn">Itinéraire</a>
-            <a href="https://www.cartedevisite.brussels" target="_blank" rel="noopener" class="btn btn-ligne">Site de l'événement</a>
-          </div>
-        </div>
-      </article>
+      <div id="expos-avenir"></div>
+      <div id="expos-passees" class="expos-passees" hidden>
+        <h3>Expositions passées</h3>
+        <ul></ul>
+      </div>
     </section>
 
     <section id="contact" class="section contact">
       <p class="eyebrow">Contact</p>
-      <h2>Une œuvre vous touche ?</h2>
-      <p>Pour acquérir un tableau, passer une commande ou proposer une exposition :</p>
-      <a href="mailto:contact@exemple.com" class="btn">Écrire à Soumar</a>
+      <h2></h2>
+      <p class="contact-texte"></p>
+      <a href="#" class="btn contact-mail">Écrire à Soumar</a>
 
-      <p class="reseaux-titre">Suivez son travail</p>
-      <ul class="reseaux">
-        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
-          <span>Instagram</span></a></li>
-        <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.750 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.370-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.150-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-          <span>TikTok</span></a></li>
-        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.1 23.69v-7.98H6.63v-3.67H9.1v-1.58c0-4.09 1.85-5.98 5.86-5.98.4 0 .96.04 1.47.1.39.05.78.11 1.14.2v3.32c-.22-.02-.44-.03-.65-.04-.25 0-.49-.01-.73-.01-.71 0-1.260.1-1.68.31-.28.14-.52.36-.68.62-.26.42-.37 1-.37 1.75v1.3h3.92l-.39 2.1-.29 1.57h-3.25v8.24C19.4 23.24 24 18.18 24 12.04 24 5.42 18.63.04 12 .04S0 5.42 0 12.04c0 5.63 3.87 10.35 9.1 11.65z"/></svg>
-          <span>Facebook</span></a></li>
-        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
-          <span>YouTube</span></a></li>
-      </ul>
+      <div class="reseaux-bloc" hidden>
+        <p class="reseaux-titre">Suivez son travail</p>
+        <ul class="reseaux"></ul>
+      </div>
     </section>
   </main>
 
@@ -145,83 +93,7 @@
     <button class="lb-nav lb-suiv" aria-label="Tableau suivant">›</button>
   </div>
 
-  <script>
-    // Mode jour / mode sombre (sombre par défaut)
-    const themeBtn = document.querySelector('.theme-btn');
-    const themeMeta = document.querySelector('meta[name="theme-color"]');
-    function appliquerTheme(jour) {
-      if (jour) document.documentElement.dataset.theme = 'light';
-      else delete document.documentElement.dataset.theme;
-      themeBtn.setAttribute('aria-label', jour ? 'Passer en mode sombre' : 'Passer en mode jour');
-      themeMeta.setAttribute('content', jour ? '#f6f1ea' : '#231913');
-    }
-    appliquerTheme(document.documentElement.dataset.theme === 'light');
-    themeBtn.addEventListener('click', () => {
-      const jour = document.documentElement.dataset.theme !== 'light';
-      appliquerTheme(jour);
-      try { localStorage.setItem('theme', jour ? 'light' : 'dark'); } catch (e) {}
-    });
-
-    // Menu mobile
-    const btn = document.querySelector('.menu-btn');
-    const nav = document.querySelector('.nav');
-    btn.addEventListener('click', () => {
-      const ouvert = nav.classList.toggle('ouvert');
-      btn.setAttribute('aria-expanded', ouvert);
-    });
-    document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('ouvert');
-      btn.setAttribute('aria-expanded', false);
-    }));
-
-    // Agrandissement des tableaux, avec flèches et glissement du doigt
-    const box = document.getElementById('lightbox');
-    const boxImg = box.querySelector('img');
-    const boxTxt = box.querySelector('figcaption');
-    const navBtns = box.querySelectorAll('.lb-nav');
-    // Chaque groupe s'ouvre seul : les 3 toiles de la série ensemble, le tableau seul et l'affiche à part
-    let groupe = [];
-    let actuel = 0;
-
-    function montrer(i) {
-      actuel = (i + groupe.length) % groupe.length;
-      const t = groupe[actuel];
-      boxImg.src = t.src;
-      boxImg.alt = t.alt;
-      boxTxt.textContent = t.nextElementSibling && t.nextElementSibling.querySelector('strong') ? t.nextElementSibling.querySelector('strong').textContent : 'Surconsommation — Carte de Visite 2026';
-    }
-    function ouvrir(img) {
-      const conteneur = img.closest('.galerie');
-      groupe = conteneur ? [...conteneur.querySelectorAll('img')] : [img];
-      navBtns.forEach(b => b.hidden = groupe.length < 2);
-      montrer(groupe.indexOf(img));
-      box.classList.add('ouvert');
-      document.body.style.overflow = 'hidden';
-    }
-    function fermer() { box.classList.remove('ouvert'); document.body.style.overflow = ''; }
-
-    document.querySelectorAll('.galerie img, .affiche').forEach(img => img.addEventListener('click', () => ouvrir(img)));
-    box.querySelector('.lb-fermer').addEventListener('click', fermer);
-    box.querySelector('.lb-prec').addEventListener('click', e => { e.stopPropagation(); montrer(actuel - 1); });
-    box.querySelector('.lb-suiv').addEventListener('click', e => { e.stopPropagation(); montrer(actuel + 1); });
-    box.addEventListener('click', e => { if (e.target === box) fermer(); });
-    document.addEventListener('keydown', e => {
-      if (!box.classList.contains('ouvert')) return;
-      if (e.key === 'Escape') fermer();
-      if (groupe.length < 2) return;
-      if (e.key === 'ArrowLeft') montrer(actuel - 1);
-      if (e.key === 'ArrowRight') montrer(actuel + 1);
-    });
-
-    let departX = null;
-    box.addEventListener('touchstart', e => { departX = e.touches[0].clientX; }, { passive: true });
-    box.addEventListener('touchend', e => {
-      if (departX === null) return;
-      const dx = e.changedTouches[0].clientX - departX;
-      if (Math.abs(dx) > 50 && groupe.length > 1) montrer(actuel + (dx < 0 ? 1 : -1));
-      departX = null;
-    });
-  </script>
+  <script src="site.js"></script>
 
 </body>
 </html>

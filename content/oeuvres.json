@@ -1,0 +1,40 @@
+{
+  "groupes": [
+    {
+      "titre": "Sous la pluie",
+      "description": "Une femme assise face à la mer, offerte à la pluie.",
+      "tableaux": [
+        {
+          "image": "images/pluie.jpg",
+          "titre": "Sous la pluie",
+          "details": "Acrylique sur toile · 2025",
+          "description_image": "Femme sous la pluie face à la mer"
+        }
+      ]
+    },
+    {
+      "titre": "Surconsommation",
+      "description": "Un vieux pêcheur, ses cormorans et une flottille de bateaux de papier : trois toiles qui se lisent comme une histoire, et qui interrogent notre rapport à la surconsommation.",
+      "tableaux": [
+        {
+          "image": "images/serie-1.jpg",
+          "titre": "I. Le départ",
+          "details": "Huile sur toile · 2025",
+          "description_image": "Le pêcheur et ses cormorans"
+        },
+        {
+          "image": "images/serie-2.jpg",
+          "titre": "II. La pêche",
+          "details": "Huile sur toile · 2025",
+          "description_image": "Le pêcheur, les bateaux et les poissons"
+        },
+        {
+          "image": "images/serie-3.jpg",
+          "titre": "III. La nuit des bateaux",
+          "details": "Huile sur toile · 2025",
+          "description_image": "Bateaux de papier sous la lune"
+        }
+      ]
+    }
+  ]
+}
