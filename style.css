@@ -186,7 +186,11 @@ figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; 
 
 /* ---------- Expositions ---------- */
 .expo-vedette { display: grid; gap: 2rem; }
-.affiche { padding: 8px; border: 1px solid var(--frame); cursor: zoom-in; }
+.affiche {
+  padding: 8px; border: 1px solid var(--frame); cursor: zoom-in;
+  filter: saturate(.62) brightness(.86) contrast(.95); transition: filter .4s;
+}
+:root[data-theme="light"] .affiche { filter: saturate(.62) brightness(.97) contrast(.95); }
 .expo-infos time { color: var(--accent); font-weight: 500; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
 .expo-infos h3 { color: var(--text); font-size: 2.2rem; margin: .3rem 0 .8rem; }
 .expo-cadre { color: var(--muted); margin-bottom: 1.5rem; }
