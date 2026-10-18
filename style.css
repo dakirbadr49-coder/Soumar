@@ -60,13 +60,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .nav nav a:active { color: var(--accent); }
 
-/* ---------- Cadre de galerie : passe-partout + liseré + ombre ---------- */
+/* ---------- Cadre : fin liseré un peu écarté du tableau, sans ombre ---------- */
 .cadre, .galerie figure img {
-  background: #fff; padding: 10px;
-  box-shadow:
-    0 0 0 1px rgba(28, 25, 23, .14),
-    0 2px 4px rgba(28, 25, 23, .06),
-    0 22px 40px -14px rgba(28, 25, 23, .38);
+  padding: 8px;
+  border: 1px solid rgba(28, 25, 23, .35);
+  background: transparent;
 }
 
 /* ---------- Bouton ---------- */
@@ -120,7 +118,7 @@ figcaption span { font-size: .8rem; color: var(--muted); letter-spacing: .03em; 
 .expos { display: grid; gap: 1.5rem; }
 .expo {
   background: #fff; overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(28, 25, 23, .08), 0 18px 36px -18px rgba(28, 25, 23, .35);
+  border: 1px solid rgba(28, 25, 23, .2);
 }
 .expo img { aspect-ratio: 16 / 10; object-fit: cover; }
 .expo-texte { padding: 1.2rem 1.3rem 1.4rem; border-top: 3px solid var(--accent); }
@@ -169,7 +167,7 @@ footer {
   .galerie.defile { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 0; }
   .astuce { display: none; }
   .expos { grid-template-columns: repeat(2, 1fr); }
-  .cadre, .galerie figure img { padding: 14px; }
+  .cadre, .galerie figure img { padding: 12px; }
 }
 
 /* ---------- Ordinateur ---------- */
@@ -198,12 +196,12 @@ footer {
   .apropos { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
   .apropos-img { width: 100%; max-width: 360px; margin: 0; }
   .expos { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .expo { transition: transform .3s, box-shadow .3s; }
-  .expo:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(28, 25, 23, .08), 0 26px 44px -18px rgba(28, 25, 23, .45); }
+  .expo { transition: transform .3s; }
+  .expo:hover { transform: translateY(-4px); }
   .apropos p:not(.eyebrow) { max-width: 60ch; }
 
   .serie { display: grid; grid-template-columns: 1fr 3fr; gap: 4rem; margin-bottom: 6rem; }
-  .galerie figure img { transition: transform .4s, box-shadow .4s; }
+  .galerie figure img { transition: transform .4s; }
   .galerie figure:hover img { transform: translateY(-4px); }
 
   .lb-nav { top: 50%; bottom: auto; transform: translateY(-50%); font-size: 3rem; }
